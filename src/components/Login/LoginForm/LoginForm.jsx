@@ -13,8 +13,8 @@ function LoginForm() {
 			});
 			if (!response.ok) throw Error(response.status);
 			const json = await response.json();
-			if (!json.user.postAuthor) {
-				throw new Error('User is not a post author');
+			if (!json.user.admin) {
+				throw new Error('User is not an admin');
 			}
 			localStorage.setItem('authToken', json.token);
 			localStorage.setItem('user', JSON.stringify(json.user));

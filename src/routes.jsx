@@ -21,14 +21,12 @@ function requireAuth() {
 		throw redirect('/');
 	}
 }
-async function postsLoader() {
+async function postsLoader({ request }) {
 	requireAuth();
-	// This should very likely be changed to either changing the posts view or changing the local storage to store both the usre and the token
-	let user = localStorage.getItem('user');
 	const token = localStorage.getItem('authToken');
-	user = JSON.parse(user);
-	const url = import.meta.env.VITE_API + '/posts/user/' + user.id;
-	console.log(url);
+	const requestURL = new URL(request.url);
+	const queries = requestURL.search;
+	const url = import.meta.env.VITE_API + '/posts/admin' + queries;
 	try {
 		const response = await fetch(url, {
 			headers: {
@@ -36,7 +34,6 @@ async function postsLoader() {
 			},
 		});
 		if (!response.ok) {
-			console.log('elllll');
 			throw new Error(response.status);
 		}
 		return await response.json();
