@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router';
-
+import style from './Header.module.css';
 function Header() {
 	const navigate = useNavigate();
 	function logout() {
