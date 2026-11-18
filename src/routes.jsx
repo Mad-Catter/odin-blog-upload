@@ -1,5 +1,5 @@
-import Login from './components/Login/Login';
-import App from './components/App/App';
+import Login from './components/LoginView/Login';
+import App from './components/PostsView/App/App';
 import UserView from './components/UserView/UserView';
 import { jwtDecode } from 'jwt-decode';
 import { redirect } from 'react-router';

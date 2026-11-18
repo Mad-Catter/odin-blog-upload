@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import RetrieveUser from './RetrieveUser/RetrieveUser';
 import UserForm from './UserForm/UserForm';
-import Header from '../App/Header/Header';
+import Header from '../Header/Header';
 
 function UserView() {
 	const [currentUser, setCurrentUser] = useState({});
