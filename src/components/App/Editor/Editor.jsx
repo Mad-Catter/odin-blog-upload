@@ -1,7 +1,9 @@
 import { useRef } from 'react';
-
+import { Editor as TinyEditor } from '@tinymce/tinymce-react';
 function Editor({ currentPost, isEditing }) {
 	const publishedRef = useRef(null);
+	const editorRef = useRef(null);
+
 	async function submit(formData) {
 		const currentId = currentPost.id ? '/' + currentPost.id : '';
 		// Patch is for updating posts, if there is no current post we want to post a new post instead
@@ -40,8 +42,18 @@ function Editor({ currentPost, isEditing }) {
 				<label htmlFor="title">Title</label>
 				<input type="text" name="title" id="title" defaultValue={currentPost.title} />
 				<label htmlFor="content">Content:</label>
-				<textarea name="content" id="title" defaultValue={currentPost.content} />
-
+				<TinyEditor
+					onInit={(_evt, editor) => (editorRef.current = editor)}
+					apiKey={import.meta.env.VITE_TINY_KEY}
+					initialValue={currentPost.content}
+					init={{
+						height: 500,
+						width: 500,
+						menubar: 'format edit',
+					}}
+					textareaName="content"
+					id="content"
+				></TinyEditor>
 				<label htmlFor="published">Publish?</label>
 				<input
 					type="checkbox"

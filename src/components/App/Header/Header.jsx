@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 function Header() {
 	const navigate = useNavigate();
@@ -9,6 +9,8 @@ function Header() {
 	}
 	return (
 		<header>
+			<Link to="../posts">Posts</Link>
+			<Link to="../users">Users</Link>
 			<button onClick={logout}>Logout</button>
 		</header>
 	);

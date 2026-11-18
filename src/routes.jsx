@@ -1,5 +1,6 @@
 import Login from './components/Login/Login';
 import App from './components/App/App';
+import UserView from './components/UserView/UserView';
 import { jwtDecode } from 'jwt-decode';
 import { redirect } from 'react-router';
 
@@ -52,6 +53,11 @@ const routes = [
 		path: 'posts',
 		element: <App />,
 		loader: postsLoader,
+	},
+	{
+		path: 'users',
+		element: <UserView />,
+		loader: requireAuth,
 	},
 ];
 

@@ -12,7 +12,6 @@ function App() {
 	return (
 		<>
 			<Header></Header>
-			<h1>Hello</h1>
 			<Sidebar posts={posts} setCurrentPost={setCurrentPost} setIsEditing={setIsEditing}></Sidebar>
 
 			{!isEditing ? (
