@@ -1,7 +1,39 @@
 :root {
+	--ash-gray: hsl(270, 6%, 21%);
+	--saturated-red: hsl(4, 85%, 31%);
+
+	--dull-orange: hsl(25, 37%, 52%);
+	--tomato-orange: hsl(15, 54%, 48%);
+	--dark-cream: hsl(0, 5%, 92%);
+	--darker-cream: hsl(0, 0%, 82%);
+
+	--sea-blue: hsl(205, 87%, 64%);
+
+	--border-green: hsl(128, 59%, 49%);
 }
 * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+	font-family: 'Helvetica', sans-serif;
+}
+body {
+	background-color: var(--dark-cream);
+}
+#root {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	flex: 1;
+	display: flex;
+	min-height: 0;
+}
+button {
+	cursor: pointer;
+}
+button:disabled {
+	cursor: not-allowed;
 }

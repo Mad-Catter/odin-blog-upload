@@ -8,10 +8,14 @@ function Header() {
 		navigate('/');
 	}
 	return (
-		<header>
-			<Link to="../posts">Posts</Link>
-			<Link to="../users">Users</Link>
-			<button onClick={logout}>Logout</button>
+		<header className={style.mainHeader}>
+			<nav>
+				<Link to="../posts">Posts</Link>
+				<Link to="../users">Users</Link>
+				<a href="">
+					<button onClick={logout}>Logout</button>
+				</a>
+			</nav>
 		</header>
 	);
 }

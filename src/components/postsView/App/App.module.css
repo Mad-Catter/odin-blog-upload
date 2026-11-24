@@ -1,11 +1,9 @@
 main {
 	display: flex;
 }
-
-.Sidebar {
-	width: 20%;
-}
-
 .content {
-	width: 80%;
+	width: 85%;
+	flex: 1;
+	min-height: 0;
+	overflow-y: auto;
 }

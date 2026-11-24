@@ -1,8 +1,20 @@
-header {
+.mainHeader {
+	border-bottom: var(--sea-blue) 4px solid;
+}
+.mainHeader,
+.mainHeader button {
+	background-color: var(--darker-cream);
+}
+.mainHeader nav {
 	display: flex;
 	justify-content: space-between;
-	border-bottom: black 4px solid;
+	padding: 10px 15px;
 }
-header a {
-	font-size: 1.25rem;
+.mainHeader a,
+.mainHeader button {
+	font-size: 1.75rem;
+	text-decoration: none;
+	border: none;
+	background-color: none;
+	color: hsl(170, 84%, 35%);
 }

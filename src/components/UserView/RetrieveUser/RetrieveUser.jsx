@@ -1,9 +1,8 @@
 import { useState } from 'react';
-
-function RetrieveUser({ setCurrentUser }) {
+import style from '../Userview.module.css';
+function RetrieveUser({ setCurrentUser, statusMessage, setStatusMessage }) {
 	const [getUsername, setGetUsername] = useState('');
 	const [getId, setGetId] = useState('');
-	const [retrivalError, setRetrivalError] = useState(false);
 
 	async function getUser(type) {
 		// Patch is for updating posts, if there is no current post we want to post a new post instead
@@ -25,18 +24,17 @@ function RetrieveUser({ setCurrentUser }) {
 			const json = await response.json();
 			console.log(json);
 			setCurrentUser(json);
-			if (retrivalError) setRetrivalError(false);
+			if (statusMessage) setStatusMessage('');
 		} catch (error) {
 			console.error(`Request failed (${error.status ?? 'network error'}):`, error.message);
 			if (error.status === 404) {
 				setCurrentUser({});
-				setRetrivalError(true);
+				setStatusMessage('Could not retrieve user.');
 			}
 		}
 	}
 	return (
-		<div className="retrieve-forms">
-			{retrivalError && <p>Could not find user.</p>}
+		<div className={style.retrieveForms}>
 			<form action={() => getUser('username')}>
 				<label htmlFor="getByUsername">Get by username:</label>
 				<input

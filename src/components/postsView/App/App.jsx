@@ -9,19 +9,30 @@ function App() {
 	const [currentPost, setCurrentPost] = useState({});
 	const [isEditing, setIsEditing] = useState(false);
 	const posts = useLoaderData();
+	const [error, setError] = useState({});
 
 	return (
 		<>
 			<Header></Header>
 			<main>
-				<div className={style.Sidebar}>
-					<Sidebar posts={posts} setCurrentPost={setCurrentPost} setIsEditing={setIsEditing}></Sidebar>
-				</div>
+				<Sidebar
+					posts={posts}
+					setCurrentPost={setCurrentPost}
+					setIsEditing={setIsEditing}
+					error={error}
+					setError={setError}
+				></Sidebar>
 				<div className={style.content}>
 					{!isEditing ? (
 						<Viewer currentPost={currentPost} isEditing={setIsEditing}></Viewer>
 					) : (
-						<Editor currentPost={currentPost} setCurrentPost={setCurrentPost} isEditing={setIsEditing}></Editor>
+						<Editor
+							currentPost={currentPost}
+							setCurrentPost={setCurrentPost}
+							isEditing={setIsEditing}
+							error={error}
+							setError={setError}
+						></Editor>
 					)}
 				</div>
 			</main>

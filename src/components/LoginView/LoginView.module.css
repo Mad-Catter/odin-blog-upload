@@ -1,0 +1,44 @@
+.loginBody {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	flex-wrap: wrap;
+}
+.loginBody h1 {
+	margin-top: 8%;
+	font-size: 4rem;
+	color: var(--ash-gray);
+	text-align: center;
+}
+
+.loginBody form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.loginBody form label,
+.loginBody form input {
+	font-size: 2rem;
+	padding: 15px;
+}
+.loginBody form input {
+	width: 50%;
+	align-self: center;
+}
+.loginBody .error {
+	color: var(--saturated-red);
+	font-size: 2.5rem;
+	padding: 15px;
+}
+
+.loginBody button {
+	margin-top: 2.5%;
+	font-size: 2.5rem;
+	padding: 10px;
+	border-radius: 5%;
+	border: 3px solid var(--border-green);
+	background-color: var(--sea-blue);
+	color: var(--ash-gray);
+}

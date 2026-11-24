@@ -1,0 +1,10 @@
+.deleteDiv {
+	position: relative;
+}
+.deleteDiv dialog[open] {
+	border: 3px solid var(--saturated-red);
+	min-width: 200px;
+	display: flex;
+	justify-content: space-between;
+	padding: 3px;
+}

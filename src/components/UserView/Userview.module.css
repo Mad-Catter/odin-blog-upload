@@ -1,0 +1,69 @@
+.userView {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.userView label,
+.userView input {
+	font-size: 1.5rem;
+}
+.statusMessage {
+	color: var(--saturated-red);
+	font-size: 2rem;
+	padding-top: 1%;
+}
+.retrieveForms {
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	padding: 2.5% 0;
+}
+.retrieveForms form {
+	display: flex;
+}
+.retrieveForms label {
+	text-align: center;
+}
+.retrieveForms button {
+	font-size: 1.25rem;
+	padding: 3px;
+}
+.userView legend {
+	font-size: 2rem;
+	text-align: center;
+}
+
+.userFlex {
+	display: flex;
+}
+.userFlex input,
+.userFlex label {
+	font-size: 1.75rem;
+}
+.inputFlex {
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	text-align: center;
+}
+.checkboxFlex {
+	justify-content: space-around;
+}
+.checkboxFlex input {
+	transform: scale(1.5);
+}
+.buttonDiv {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 4%;
+}
+
+.buttonDiv button {
+	font-size: 1.5rem;
+	padding: 5px;
+	border-radius: 10%;
+}
+
+.buttonDiv dialog {
+	top: 115%;
+}
